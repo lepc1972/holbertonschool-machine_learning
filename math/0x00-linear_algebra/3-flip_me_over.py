@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# write a function  that returns the transpose of a matrix:
+"""write a function  that returns the transpose of a matrix""
 
 
 def matrix_transpose(matrix):
