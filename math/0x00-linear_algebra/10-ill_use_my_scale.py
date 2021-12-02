@@ -3,6 +3,7 @@
 
 
 def np_shape(matrix):
+    import numpy as np
     """
     Function that calculates the shape of a numpy.ndarray
     Args:
