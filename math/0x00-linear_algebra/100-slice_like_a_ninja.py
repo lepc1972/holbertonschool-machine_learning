@@ -3,7 +3,6 @@
 that slices a matrix along specific axes"""
 
 
-
 def np_slice(matrix, axes={}):
     """Slices a matrix like a ninja"""
     ax_values = {}
