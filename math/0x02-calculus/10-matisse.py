@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Write a function def poly_derivative(poly): that calculates the derivative of a polynomial"""
+"""Write a function def poly_derivative(poly):
+that calculates the derivative of a polynomial"""
 
 
 def poly_derivative(poly):
