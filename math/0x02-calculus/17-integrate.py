@@ -2,17 +2,23 @@
 """Write a function def poly_integral(poly, C=0): that calculates the integral of a polynomial"""
 
 
+#!/usr/bin/env python3
+"""Derivative"""
+
+
 def poly_integral(poly, C=0):
-    """
-    Returns the integral of a polynomial
-    """
-    if type(poly) is not list:
+    """Performs integrate of a polynom"""
+    # Check if poly is a valid list.
+    if poly == [] or type(poly) is not list or type(C) is not int:
         return None
-    if any(type(x) is not int for x in poly):
-        return None
-    if len(poly) == 0:
-        return None
-    integral = [C]
-    for x in range(len(poly)):
-        integral.append(poly[x] / (x + 1))
-    return integral
+    if poly == [0]:
+        return [C]
+    for n in poly:
+        if type(n) is not int and type(n) is not float:
+            return None
+
+    integrals = [C] + [poly[i] / (i + 1) for i in range(len(poly))]
+
+    result = [int(n) if n % 1 == 0 else n for n in integrals]
+
+    return result
