@@ -8,7 +8,6 @@
 
 def poly_integral(poly, C=0):
     """Performs integrate of a polynom"""
-    # Check if poly is a valid list.
     if poly == [] or type(poly) is not list or type(C) is not int:
         return None
     if poly == [0]:
