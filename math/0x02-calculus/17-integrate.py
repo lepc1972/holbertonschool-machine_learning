@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-"""Write a function def poly_integral(poly, C=0): that calculates the integral of a polynomial"""
-
-
-#!/usr/bin/env python3
-"""Derivative"""
+"""Write a function def poly_integral(poly, C=0):
+that calculates the integral of a polynomial"""
 
 
 def poly_integral(poly, C=0):
