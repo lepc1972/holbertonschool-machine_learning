@@ -3,6 +3,8 @@
 
 
 import numpy as np
+
+
 class Poisson:
     """Poisson distribution"""
     def __init__(self, data=None, lambtha=1.):
