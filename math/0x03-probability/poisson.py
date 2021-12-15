@@ -2,39 +2,47 @@
 """Create a class Poisson that represents a poisson distribution"""
 
 
-import numpy as np
-
-
 class Poisson:
     """Poisson distribution"""
+
     def __init__(self, data=None, lambtha=1.):
-        """Initialize Poisson class"""
+        """Constructor"""
+        self.lambtha = float(lambtha)
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
-            self.lambtha = lambtha
+            else:
+                self.lambtha = float(lambtha)
         else:
             if type(data) != list:
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            self.lambtha = np.mean(data)
+            self.lambtha = self.__calculate_lambtha(data)
+
+    def __calculate_lambtha(self, data):
+        """Calculate the value of lambtha"""
+        mean = sum(data) / len(data)
+        return mean
 
     def pmf(self, k):
-        """Calculates the value of the PMF for a given number of events"""
+        """Calculate the value of the pmf for a given number of successes"""
         if type(k) != int:
             raise TypeError("k must be an integer")
         if k < 0:
             return 0
-        return (np.math.factorial(k) / (self.lambtha ** k * np.math.exp(1)))
+        factorial = 1
+        for i in range(1, k + 1):
+            factorial *= i
+        return (self.lambtha ** k) * (e ** -self.lambtha) / factorial
 
     def cdf(self, k):
-        """Calculates the value of the CDF for a given number of events"""
+        """Calculate the value of the cdf for a given number of successes"""
         if type(k) != int:
             raise TypeError("k must be an integer")
         if k < 0:
             return 0
-        sum = 0
+        cdf = 0
         for i in range(k + 1):
-            sum += self.pmf(i)
-        return sum
+            cdf += self.pmf(i)
+        return cdf
