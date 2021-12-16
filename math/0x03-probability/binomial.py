@@ -44,8 +44,8 @@ class Binomial:
                 factorial_k = factorial_k * i
         for j in range(1, n + 1):
             factorial_n = factorial_n * j
-        for l in range(1, n - k + 1):
-            factorial_n_k = factorial_n_k * l
+        for x in range(1, n - k + 1):
+            factorial_n_k = factorial_n_k * x
         return (factorial_n / (factorial_k * factorial_n_k)) * (
             self.p**k) * ((1 - self.p)**(self.n - k))
 
