@@ -27,6 +27,7 @@ class Poisson:
 
     def pmf(self, k):
         """Calculate the value of the pmf for a given number of successes"""
+        e = 2.7182818285
         if type(k) != int:
             raise TypeError("k must be an integer")
         if k < 0:
